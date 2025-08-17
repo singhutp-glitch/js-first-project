@@ -17,4 +17,10 @@ function getcomputerchoice()
     }
 }
 
+function gethumanchoice()
+{
+    return prompt("enter your choice ","rock");
+}
+
+console.log(gethumanchoice());
 console.log(getcomputerchoice());
