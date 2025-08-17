@@ -1,4 +1,3 @@
-console.log("hello world");
 //functions
 function getcomputerchoice()
 {
@@ -21,47 +20,74 @@ function gethumanchoice()
 {
     return prompt("enter your choice ","rock");
 }
-function encode(choice)
+
+function playgame()
 {
-    if(choice==="rock")
+
+    let humanscore=0;
+    let computerscore=0;
+    for(let i=1;i<=5;i++)
     {
-        return 0;
+        console.log("round "+i);
+        playround();
+        console.log("you: "+humanscore+" computer: "+computerscore);
     }
-    else if(choice==="paper")
+    if(humanscore>computerscore)
     {
-        return 1;
+        console.log("YOU WIN");
+    }
+    else if(humanscore<computerscore)
+    {
+        console.log("YOU LOSE");
     }
     else
     {
-        return 2;
+        console.log("DRAW");
     }
-}
+    //inner functions
 
-function playround()
-{
-    const humanselection=gethumanchoice().toLowerCase();
-    const humancode=encode(humanselection);
-    const compselection=getcomputerchoice();
-    const compcode=encode(compselection);
+    function encode(choice)
+    {
+        if(choice==="rock")
+        {
+            return 0;
+        }
+        else if(choice==="paper")
+        {
+            return 1;
+        }
+        else
+        {
+            return 2;
+        }
+    }
 
-    if(humancode-compcode===0)
+    function playround()
     {
-        console.log(humanselection+" = "+compselection+" -> Draw");
-    }
-    else if((humancode-compcode+3)%3===1)
-    {
-        console.log(humanselection+" beats "+compselection+" -> you win");
-        humanscore++;
-    }
-    else
-    {
-        console.log(compselection+" beats "+humanselection+" -> computer wins");
-        computerscore++;
+
+        const humanselection=gethumanchoice().toLowerCase();
+        const humancode=encode(humanselection);
+        const compselection=getcomputerchoice();
+        const compcode=encode(compselection);
+
+        if(humancode-compcode===0)
+        {
+            console.log(humanselection+" = "+compselection+" -> Draw");
+        }
+        else if((humancode-compcode+3)%3===1)
+        {
+            console.log(humanselection+" beats "+compselection+" -> you win");
+            humanscore++;
+        }
+        else
+        {
+            console.log(compselection+" beats "+humanselection+" -> computer wins");
+            computerscore++;
+        }
+
     }
 
 }
 
 //main
-let humanscore=0;
-let computerscore=0;
-playround();
+playgame();
