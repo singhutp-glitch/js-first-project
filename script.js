@@ -16,37 +16,7 @@ function getcomputerchoice()
     }
 }
 
-function gethumanchoice()
-{
-    return prompt("enter your choice ","rock");
-}
 
-function playgame()
-{
-
-    for(let i=1;i<=5;i++)
-    {
-        console.log("round "+i);
-        playround();
-        console.log("you: "+humanscore+" computer: "+computerscore);
-    }
-    if(humanscore>computerscore)
-    {
-        console.log("YOU WIN");
-    }
-    else if(humanscore<computerscore)
-    {
-        console.log("YOU LOSE");
-    }
-    else
-    {
-        console.log("DRAW");
-    }
-    //inner functions
-
-
-   
-}
 function encode(choice)
 {
     if(choice==="rock")
@@ -95,6 +65,7 @@ function showscore()
 
 
 //main
+
 const btndiv= document.querySelector("div");
 const btnlist=document.querySelector("ul");
 const body=document.querySelector("body");
@@ -126,5 +97,3 @@ btnlist.addEventListener("click",function(event){
     }
     }
 })
-
-
