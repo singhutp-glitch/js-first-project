@@ -1,0 +1,46 @@
+ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    gap:25px;
+}
+#rock ,#paper ,#scissor{
+    background-color: aqua;
+    border: black solid;
+    text-align: center;
+    font-size: 40px;
+    padding: 30px;
+    flex: 1 0 auto;
+}
+#rock{
+    background-color: rgb(244, 235, 235);
+}
+#paper{
+    background-color: rgb(249, 249, 241);
+}
+#scissor{
+    background-color: rgb(204, 234, 249);
+}
+.result{
+    margin:50px;
+    border:black solid;
+    padding: 30px 10px;
+    font-size: 30px;
+}
+
+.score{
+    margin:50px;
+    border:black solid;
+    padding: 30px 10px;
+    font-size: 30px;
+    text-align: center;
+}
+.winner{
+    margin:20px;
+    border:black solid;
+    padding: 30px 10px;
+    font-size: 100px;
+    text-align: center;
+}
